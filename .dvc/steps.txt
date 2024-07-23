@@ -1,0 +1,43 @@
+# MLOPS_part2
+
+In this project we will be taking the wafe fault detection dataset and implement it in the MLOPS pipelines.
+
+### Set up steps:
+
+1. Create a conda environment : conda create -n wafer_fault_mlops_new python==3.9 -y
+2. Activate the conda environment : conda activate wafer_fault_mlops
+3. Download cookiecutter as it will be useful for MLOPS folder structure creation : pip install cookiecutter / (for python>=3.8) pip install cookiecutter-data-science
+4. Now the next command is : ccds which will as k few basic questions which are : <br>
+            a. Project name : wafer_main
+            b. repo name : mlops_main
+            c. module name : code_repo
+            d. Author name : shubhashish1
+            e. description : Wafer fault detection
+            f. python version : 3.9
+            g. select datset storage :
+            h. select env. manager : virtualenv (1)
+            i . select dependency file : requirements.txt (1)
+            j. select pydata_package :
+            k. Slect open source license : MIT(2)
+            l. select docs :
+            m. select include_code_scaffold:
+   And it's done. We will be able to get a folder named mlops_main with the required folder structure.
+
+   5. Now let's go to the mlops_main folder created for the code interpreter by : cd mlops_main
+   6. Now let's open the vs for code creation in mlops_main folder by providing command : code
+   7. Let's download the dataset from the git : https://github.com/iNeuron-Pvt-Ltd/wafer-dataset/tree/main
+   8. Now we will do the git initialization with command : git init
+   9. Then install dvc with command : pip install dvc
+   10. Now initialize the DVC with command : dvc init
+   11. Do the first commit and push the details to remote repository :
+  
+                 . git add .
+                 . git commit -m "first commit"
+                 . git branch -M main
+                 . git remote add origin <url>/<USERNAME>/<REPONAME>.git
+                 . git push -f -u origin main
+12. We will not be doing all the coding in the main branch... hence we will move to the dev branch: git checkout -b dev
+13. Let's remove the git tracking for Training and prediction files with command: git rm -r --cached Prediction_Batch_files/*.csv
+14. And git commit -m "stop tracking Prediction_Batch_files"
+13. Now let's add the training data files to dvc for the data tracking with command: dvc add Training_Batch_Files/ Prediction_Batch_files/
+
