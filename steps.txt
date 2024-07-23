@@ -36,3 +36,9 @@ In this project we will be taking the wafe fault detection dataset and implement
                  . git branch -M main
                  . git remote add origin <url>/<USERNAME>/<REPONAME>.git
                  . git push -u origin main
+
+12. We will not be doing all the coding in the main branch... hence we will move to the dev branch: git checkout -b dev
+13. Let's remove the git tracking for Training and prediction files with command: git rm -r --cached Prediction_Batch_files/*.csv
+14. And git commit -m "stop tracking Prediction_Batch_files"
+13. Now let's add the training data files to dvc for the data tracking with command: dvc add Training_Batch_Files/ Prediction_Batch_files/
+
