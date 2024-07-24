@@ -41,4 +41,16 @@ In this project we will be taking the wafe fault detection dataset and implement
 13. Let's remove the git tracking for Training and prediction files with command: git rm -r --cached Prediction_Batch_files/*.csv
 14. And git commit -m "stop tracking Prediction_Batch_files"
 13. Now let's add the training data files to dvc for the data tracking with command: dvc add Training_Batch_Files/ Prediction_Batch_files/
-
+14. Add all the requirements to the requirements.txt file.
+15. Now we will use our gdrive as the cloud location to store the different versions of data via dvc using command : pip install dvc[gdrive]
+16. Now we will be adding a remote storage of gdrive for the dvc to do the data tracking and versioning.
+17. Go to the google drive and then create a folder where you want to store the data for me it is DVCDataTracking -> mlops_live
+18. Now go to the mlops_live folder and pick the id from it's url like from "https://drive.google.com/drive/u/0/folders/1x4dRhghnf_WLpaLbK5r5YyVhefaxIJ1y" url copy "1x4dRhghnf_WLpaLbK5r5YyVhefaxIJ1y" drive id.
+19. Now to add this remote drive to dvc tracking type command : dvc remote add -d storage gdrive://1x4dRhghnf_WLpaLbK5r5YyVhefaxIJ1y the drive id.
+20. Now commit the storage by command: git add .dvc/config && git commit -m "configure remote storage"
+21. Let's create the gdrive-user-credentials.json with informations: 
+22. We can add this in the GitHub repo settings -> secrets and variables -> Actions -> New Repository Secrets and add the details as: Name: GDRIVE_CREDENTIALS and Secret: 
+21. We can add gdrive credentials secrets in GitHub repo secrets. This credentials can be found in command: .dvc >> temp >> gdrive-user-credentials.json
+22. Once the desired gdrive is set for the dvc tracking we have to push the changes to this drive with command: dvc push
+23. This thing can be done to any other storage as well like s3 bucket or container etc.
+24. When ever we want to get the data changed in dvc we can use the command: dvc pull (This we can use every time we do the new coding or change anything in the existing code).
