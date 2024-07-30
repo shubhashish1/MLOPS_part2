@@ -68,3 +68,9 @@ In this project we will be taking the wafe fault detection dataset and implement
                                        . "LengthOfTimeStampInFile":6, # 120000 which is in the file name
                                        . "NumberofColumns" : 592, # Total columns present in the data
                                        . "ColName": {a:str,b:int,c:str,d:str,e...} # all the columns and their respective data types
+36. Do the same things for prediction_schema.json file. 
+37. Now as we have created the config.yaml file we can put it in place of config path in args of pipeline_01_data_preparation.py.
+    So args.add_argument("--config",default="default") will be modified to "
+                                                                             default_config_path = os.path.join("config","params.yaml")
+                                                                             args.add_argument("--config",default=default_config_path)"
+38. Refer the changes done in the pipeline_01_data_preparation.py file and then run it by command python code_repo/pipeline_01_data_preparation.py
