@@ -1,0 +1,37 @@
+base:
+  project: Wafer-Quality-project
+  randoms_tate: 42
+  target_col: Output
+
+datasource:
+  batch_files: Trainig_Batch_Files
+
+data_preparation:
+  training_db: Training.db # Training dtabase name to store training data
+  training_db_dir: Training_Database # Directory where the databse will be stored
+  schema_training: config/schema_training.json # Schema for the training data table
+  good_validated_raw_dir: data/Training_Raw_files_validated/Good_raw # Raw data which is good for training
+  bad_validated_raw_dir: data/Training_Raw_files_validated/Bad_raw # Raw data which is not good for training
+  TrainingArchiveBadData: data/TrainingArchiveBadData # This is to archive the data which isn't good for traing
+  Training_FileFromDB: data/Training_FileFromDB # Extracting the good training data from the training db
+  master_csv: master.csv # Merged all training csv files to one master csv
+
+prep_data_preparation:
+  prediction_db: Prediction.db # Prediction database name to store prediction data
+  prediction_db_dir: Prediction_Database # Directory where the databse will be stored
+  schema_prediction: config/schema_prediction.json
+  good_validated_raw_dir: data/Prediction_Raw_files_validated/Good_raw
+  bad_validated_raw_dir: data/Prediction_Raw_files_validated/Bad_raw
+  PredictionArchiveBadData: data/PredictionArchiveBadData
+  Prediction_FileFromDB: data/Prediction_FileFromDB
+  master_csv: master.csv
+  Prediction_Output_File: Prediction_Output_File/Predictions.csv # Saving the predicted output
+
+saved_models:
+  model_dir: models
+
+data_preprocessing:
+  preprocessed_data_dir: data/preprocessed_data # clean preprocessed data
+  null_values_csv: null_values.csv # Data points containing null or missing values
+
+  preprocessed_data_dir_pred: data/preprocessed_data_pred

@@ -50,7 +50,15 @@ In this project we will be taking the wafe fault detection dataset and implement
 20. Now commit the storage by command: git add .dvc/config && git commit -m "configure remote storage"
 21. Let's create the gdrive-user-credentials.json with informations: 
 22. We can add this in the GitHub repo settings -> secrets and variables -> Actions -> New Repository Secrets and add the details as: Name: GDRIVE_CREDENTIALS and Secret: 
-21. We can add gdrive credentials secrets in GitHub repo secrets. This credentials can be found in command: .dvc >> temp >> gdrive-user-credentials.json
-22. Once the desired gdrive is set for the dvc tracking we have to push the changes to this drive with command: dvc push
-23. This thing can be done to any other storage as well like s3 bucket or container etc.
-24. When ever we want to get the data changed in dvc we can use the command: dvc pull (This we can use every time we do the new coding or change anything in the existing code).
+23. We can add gdrive credentials secrets in GitHub repo secrets. This credentials can be found in command: .dvc >> temp >> gdrive-user-credentials.json
+24. Once the desired gdrive is set for the dvc tracking we have to push the changes to this drive with command: dvc push
+25. This thing can be done to any other storage as well like s3 bucket or container etc.
+26. When ever we want to get the data changed in dvc we can use the command: dvc pull (This we can use every time we do the new coding or change anything in the existing code).
+27. Now let's install all requirements by command: pip install -r requirements.txt
+28. Now we have to collect the data and combine them into single file and also save it as process for the automated way. We have to go to the code_repo and create a file named pipeline_01_data_preparation.py
+29. We can see the config and the datasource values in the CLI by command: python pipeline_01_data_preparation.py
+30. If we want a different config value then we can do that by command: python pipeline_01_data_preparation.py --config
+31. Now let's create config folder and a file inside that folder named: params.yaml
+32. This params.yaml file will contain all the information we need.
+33. params.yaml is a json file which will contain the config for all the stages of our project life cycle.
+34. Now let's prepare the training_schema.json nd prediction_schema.json files containing the details(schema) for training and prediction data. 
