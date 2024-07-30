@@ -61,4 +61,10 @@ In this project we will be taking the wafe fault detection dataset and implement
 31. Now let's create config folder and a file inside that folder named: params.yaml
 32. This params.yaml file will contain all the information we need.
 33. params.yaml is a json file which will contain the config for all the stages of our project life cycle.
-34. Now let's prepare the training_schema.json nd prediction_schema.json files containing the details(schema) for training and prediction data. 
+34. Now let's prepare the training_schema.json nd prediction_schema.json files containing the details(schema) for training and prediction data.
+35. In the  training_schema.json  file we have below details:
+                                       . "SampleFileName": "wafer_08012020_120000.csv",
+                                       . "LengthOfDateStampInFile": 8, # 08012020 which is in the file name
+                                       . "LengthOfTimeStampInFile":6, # 120000 which is in the file name
+                                       . "NumberofColumns" : 592, # Total columns present in the data
+                                       . "ColName": {a:str,b:int,c:str,d:str,e...} # all the columns and their respective data types
